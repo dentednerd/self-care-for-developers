@@ -24,8 +24,32 @@ const globalStyles = globalCss({
   h1: {
     fontFamily: 'Fredoka One',
     fontSize: '$4',
-    margin: '4rem 0',
+    margin: '0 0 2rem',
     color: '$title'
+  },
+
+  h2: {
+    fontFamily: 'Raleway',
+    fontSize: '$2',
+    margin: '0 0 1rem',
+    color: '$title'
+  },
+
+  a: {
+    color: '$green500',
+    textDecoration: 'none',
+
+    '&:visited': {
+      color: '$gold500'
+    }
+  },
+
+  ul: {
+    listStyleType: 'none',
+
+    li: {
+      margin: '$1 0'
+    }
   }
 });
 

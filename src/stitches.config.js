@@ -14,6 +14,18 @@ export const { styled, css, getCssText } = createStitches({
       3: '32px',
       4: '48px'
     },
+    space: {
+      1: '16px',
+      2: '24px',
+      3: '32px',
+      4: '48px'
+    },
+    radii: {
+      1: '16px',
+      2: '24px',
+      3: '32px',
+      4: '48px'
+    },
     colors: {
       white: 'hsl(0, 100%, 100%)',
       red900: 'hsl(8, 79%, 96%)', // provincial
@@ -50,6 +62,8 @@ export const darkTheme = createTheme('dark-mode', {
     bg: '$blue200',
     text: '$white',
     title: '$red700',
+    titleHover: '$red600',
+    shadow: '$blue400'
   },
 });
 
@@ -58,6 +72,8 @@ export const lightTheme = createTheme('light-mode', {
     accent: '$red900',
     bg: '$white',
     text: '$blue200',
-    title: '$red600',
+    title: '$blue600',
+    titleHover: '$blue500',
+    shadow: '$red800'
   },
 })
