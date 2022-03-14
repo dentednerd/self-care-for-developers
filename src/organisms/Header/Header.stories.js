@@ -3,6 +3,12 @@ import { useDarkMode } from 'storybook-dark-mode';
 import addons from '@storybook/addons';
 import Header from '.';
 
+const categoryData = [
+  { fieldValue: 'one' },
+  { fieldValue: 'two' },
+  { fieldValue: 'three' }
+];
+
 export default {
   title: 'organisms/Header',
   component: Header,
@@ -25,7 +31,7 @@ const Template = () => {
     toggle: () => (toggleIsDark(!isDark))
   }
   return (
-    <Header darkMode={darkMode} />
+    <Header categoryData={categoryData} darkMode={darkMode} />
   )
 };
 

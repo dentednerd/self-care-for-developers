@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import useDarkMode from 'use-dark-mode';
 import { darkTheme, lightTheme } from '../../stitches.config';
 import Header from '../../organisms/Header';
+import useCategoriesQuery from '../../hooks/useCategoriesQuery';
 import globalStyles from '../../styles/globalStyles';
 
 const LayoutTemplate = ({ children }) => {
@@ -11,11 +12,13 @@ const LayoutTemplate = ({ children }) => {
   const darkMode = useDarkMode(darkPreference);
   const theme = darkMode.value ? darkTheme : lightTheme;
 
+  const categoryData = useCategoriesQuery();
+
   globalStyles();
 
   return (
     <div className={theme}>
-      <Header darkMode={darkMode} />
+      <Header categoryData={categoryData} darkMode={darkMode} />
       <main>
         {children}
       </main>

@@ -19,5 +19,5 @@ export const ToggleMenuProvider = ({ children }) => {
 }
 
 ToggleMenuProvider.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
 }

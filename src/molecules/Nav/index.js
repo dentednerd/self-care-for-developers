@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
 import { Link } from 'gatsby';
 import { styled } from '../../stitches.config';
-import useCategoriesQuery from '../../hooks/useCategoriesQuery';
 
 const StyledNav = styled('nav', {
   position: 'absolute',
@@ -31,15 +30,12 @@ const StyledNav = styled('nav', {
   },
 });
 
-const Nav = ({
-  toggleIsOpen,
-  headerClasses
-}) => {
-  const categoryData = useCategoriesQuery();
+const Nav = ({ categoryData, headerClasses }) => {
+  if (!categoryData) return null;
 
   return (
     <StyledNav className={headerClasses.join(' ')}>
-      {categoryData.allMdx.group.map(({ fieldValue }) => (
+      {categoryData.map(({ fieldValue }) => (
         <p key={fieldValue}>
           <Link to={`/${kebabCase(fieldValue)}`}>
             {fieldValue}
@@ -51,7 +47,6 @@ const Nav = ({
 }
 
 Nav.propTypes = {
-  toggleIsOpen: PropTypes.func.isRequired,
   headerClasses: PropTypes.array.isRequired
 }
 

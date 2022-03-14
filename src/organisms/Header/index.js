@@ -22,27 +22,25 @@ const StyledHeader = styled('header', {
   marginBottom: '1rem',
 });
 
-// const Controls = styled('section', {
-//   display: 'flex',
-//   flexFlow: 'row nowrap',
-//   gap: '1rem',
-// });
-
-const Header = ({ darkMode }) => {
+const Header = ({ categoryData, darkMode }) => {
   const { isMenuOpen, setIsMenuOpen, headerClasses } = useContext(ToggleMenuContext);
 
   return (
     <StyledHeader>
       <DarkModeToggle darkMode={darkMode} />
-      <Nav
-        toggleIsOpen={setIsMenuOpen}
-        headerClasses={headerClasses}
-      />
-      <Hamburger
-        isOpen={isMenuOpen}
-        toggleIsOpen={setIsMenuOpen}
-        headerClasses={headerClasses}
-      />
+      {categoryData && (
+        <>
+          <Nav
+            categoryData={categoryData}
+            headerClasses={headerClasses}
+          />
+          <Hamburger
+            isOpen={isMenuOpen}
+            toggleIsOpen={setIsMenuOpen}
+            headerClasses={headerClasses}
+          />
+        </>
+      )}
     </StyledHeader>
   );
 }

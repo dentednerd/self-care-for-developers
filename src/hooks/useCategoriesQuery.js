@@ -12,7 +12,7 @@ const useCategoriesQuery = () => {
       }
     }
   `);
-  return categoryData;
+  return categoryData.allMdx.group;
 }
 
 export default useCategoriesQuery;
