@@ -1,10 +1,12 @@
 import * as React from 'react';
-import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
+import { Link, graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import kebabCase from 'lodash/kebabCase';
 import LayoutTemplate from '../templates/LayoutTemplate';
+import Button from '../atoms/Button';
 
 const Post = ({ data }) => {
-  const {title, date, authorName, authorGithub} = data.mdx.frontmatter;
+  const { title, date, authorName, authorGithub, tags, } = data.mdx.frontmatter;
 
   return (
     <LayoutTemplate>
@@ -13,6 +15,17 @@ const Post = ({ data }) => {
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
+      <ul>
+        {tags.map((tag) => (
+          <li key={tag}>
+            <Link to={`/${kebabCase(tag)}`}>
+              <Button>
+                Let's talk more about {tag}.
+              </Button>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </LayoutTemplate>
   );
 };
@@ -25,6 +38,7 @@ export const query = graphql`
         date(formatString: "DD MMMM, YYYY")
         authorName
         authorGithub
+        tags
       }
       body
     }

@@ -42,6 +42,7 @@ const Nav = ({ categoryData, headerClasses }) => {
           </Link>
         </p>
       ))}
+      <p><Link to="/">home</Link></p>
     </StyledNav>
   );
 }
