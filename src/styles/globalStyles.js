@@ -21,10 +21,14 @@ const globalStyles = globalCss({
     maxWidth: '768px',
   },
 
+  p: {
+    marginBottom: '$1'
+  },
+
   h1: {
     fontFamily: 'Fredoka One',
     fontSize: '$4',
-    margin: '0 0 2rem',
+    margin: '0 0 1rem',
     color: '$title'
   },
 

@@ -4,10 +4,12 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import LayoutTemplate from '../templates/LayoutTemplate';
 
 const Post = ({ data }) => {
+  const {title, date, authorName, authorGithub} = data.mdx.frontmatter;
+
   return (
     <LayoutTemplate>
-      <h1>{data.mdx.frontmatter.title}</h1>
-      <p>{data.mdx.frontmatter.date}</p>
+      <h1>{title}</h1>
+      <p>by <a href={`https://github.com/${authorGithub}`}>{authorName}</a> on {date}</p>
       <MDXRenderer>
         {data.mdx.body}
       </MDXRenderer>
@@ -20,7 +22,9 @@ export const query = graphql`
     mdx(id: {eq: $id}) {
       frontmatter {
         title
-        date(formatString: "MMMM D, YYYY")
+        date(formatString: "DD MMMM, YYYY")
+        authorName
+        authorGithub
       }
       body
     }
