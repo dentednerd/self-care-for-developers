@@ -13,24 +13,8 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
-        path: "./src/images/",
-      },
-      __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "pages",
-        path: "./src/pages/",
-      },
-      __key: "pages",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: "articles",
-        path: "./src/articles/",
+        path: `${__dirname}/src/articles/`,
       },
       __key: "articles",
     },
@@ -41,5 +25,6 @@ module.exports = {
         shortname: `your-disqus-shortname`
       }
     },
+    "gatsby-plugin-mdx"
   ],
 };
