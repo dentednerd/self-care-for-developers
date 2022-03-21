@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
+import { Helmet } from 'react-helmet';
 import LayoutTemplate from '../LayoutTemplate';
 import Button from '../../atoms/Button';
 
@@ -10,6 +11,9 @@ const Tags = ({ pageContext, data }) => {
 
   return (
     <LayoutTemplate>
+      <Helmet>
+        <title>{tag} - Self Care for Developers</title>
+      </Helmet>
       <h1>Let's talk about {tag}.</h1>
       <ul>
         {edges.map(({ node }) => {

@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { styled } from '../stitches.config';
 import kebabCase from 'lodash/kebabCase';
 import LayoutTemplate from '../templates/LayoutTemplate';
+import { Helmet } from 'react-helmet';
 import Button from '../atoms/Button';
 import HeroGrid from '../molecules/HeroGrid';
 import useCategoriesQuery from '../hooks/useCategoriesQuery';
@@ -18,6 +19,9 @@ const IndexPage = () => {
 
   return (
     <LayoutTemplate>
+      <Helmet>
+        <title>Self Care for Developers</title>
+      </Helmet>
       <HeroGrid />
       <StyledList>
         {categoryData.map(({ fieldValue }) => (

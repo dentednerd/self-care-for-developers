@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Link, graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import kebabCase from 'lodash/kebabCase';
+import { Helmet } from 'react-helmet';
 import LayoutTemplate from '../templates/LayoutTemplate';
 import Button from '../atoms/Button';
 
@@ -10,6 +11,9 @@ const Post = ({ data }) => {
 
   return (
     <LayoutTemplate>
+      <Helmet>
+        <title>{title} - Self Care for Developers</title>
+      </Helmet>
       <article>
         <header>
           <h1>{title}</h1>
