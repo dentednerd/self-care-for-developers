@@ -37,7 +37,7 @@ const Post = ({ data }) => {
           <li>
             <Link to='/'>
               <Button>
-                Let's talk about something else - take me back.
+                Take me home.
               </Button>
             </Link>
           </li>
