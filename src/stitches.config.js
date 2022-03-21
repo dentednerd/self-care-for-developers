@@ -9,22 +9,28 @@ export const { styled, css, getCssText } = createStitches({
       Raleway: 'Raleway'
     },
     fontSizes: {
-      1: '16px',
-      2: '24px',
-      3: '32px',
-      4: '48px'
+      1: '18px',
+      2: '36px',
+      3: '54px',
+      4: '72px'
+    },
+    lineHeights: {
+      1: '30px',
+      2: '50px',
+      3: '70px',
+      4: '90px'
     },
     space: {
-      1: '16px',
-      2: '24px',
-      3: '32px',
-      4: '48px'
+      1: '30px',
+      2: '50px',
+      3: '70px',
+      4: '90px'
     },
     radii: {
-      1: '16px',
-      2: '24px',
-      3: '32px',
-      4: '48px'
+      1: '30px',
+      2: '50px',
+      3: '70px',
+      4: '90px'
     },
     colors: {
       white: 'hsl(0, 100%, 100%)',
@@ -61,6 +67,7 @@ export const darkTheme = createTheme('dark-mode', {
     accent: '$blue300',
     bg: '$blue200',
     text: '$white',
+    buttonText: '$blue100',
     title: '$red700',
     titleHover: '$red600',
     shadow: '$blue400'
@@ -72,6 +79,7 @@ export const lightTheme = createTheme('light-mode', {
     accent: '$red900',
     bg: '$white',
     text: '$blue200',
+    buttonText: '$white',
     title: '$blue600',
     titleHover: '$blue500',
     shadow: '$red800'
