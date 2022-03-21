@@ -6,13 +6,8 @@ export const ToggleMenuContext = createContext();
 export const ToggleMenuProvider = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const headerClasses = [];
-  if (isMenuOpen) {
-    headerClasses.push('open');
-  }
-
   return (
-    <ToggleMenuContext.Provider value={{ isMenuOpen, setIsMenuOpen, headerClasses }}>
+    <ToggleMenuContext.Provider value={{ isMenuOpen, setIsMenuOpen }}>
       {children}
     </ToggleMenuContext.Provider>
   );

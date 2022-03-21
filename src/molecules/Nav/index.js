@@ -23,18 +23,13 @@ const StyledNav = styled('nav', {
     transition: 'transform 0.2s ease-in-out',
     transformOrigin: 'center top',
   },
-
-  '&.scrolled': {
-    borderRight: 'none',
-    right: '0',
-  },
 });
 
-const Nav = ({ categoryData, headerClasses }) => {
+const Nav = ({ categoryData, isMenuOpen }) => {
   if (!categoryData) return null;
 
   return (
-    <StyledNav className={headerClasses.join(' ')}>
+    <StyledNav className={isMenuOpen && 'open'}>
       {categoryData.map(({ fieldValue }) => (
         <p key={fieldValue}>
           <Link to={`/${kebabCase(fieldValue)}`}>

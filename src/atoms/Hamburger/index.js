@@ -55,10 +55,10 @@ const StyledHamburger = styled('div', {
   }
 });
 
-const Hamburger = ({ isOpen, toggleIsOpen, headerClasses }) => (
+const Hamburger = ({ isMenuOpen, setIsMenuOpen }) => (
   <StyledHamburger
-    onClick={() => toggleIsOpen(!isOpen)}
-    className={headerClasses.join(' ')}
+    onClick={() => setIsMenuOpen(!isMenuOpen)}
+    className={isMenuOpen && 'open'}
   >
     <span />
     <span />

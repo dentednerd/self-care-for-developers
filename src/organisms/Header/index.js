@@ -23,7 +23,7 @@ const StyledHeader = styled('header', {
 });
 
 const Header = ({ categoryData, darkMode }) => {
-  const { isMenuOpen, setIsMenuOpen, headerClasses } = useContext(ToggleMenuContext);
+  const { isMenuOpen, setIsMenuOpen } = useContext(ToggleMenuContext);
 
   return (
     <StyledHeader>
@@ -32,12 +32,11 @@ const Header = ({ categoryData, darkMode }) => {
         <>
           <Nav
             categoryData={categoryData}
-            headerClasses={headerClasses}
+            isMenuOpen={isMenuOpen}
           />
           <Hamburger
-            isOpen={isMenuOpen}
-            toggleIsOpen={setIsMenuOpen}
-            headerClasses={headerClasses}
+            isMenuOpen={isMenuOpen}
+            setIsMenuOpen={setIsMenuOpen}
           />
         </>
       )}
