@@ -19,7 +19,7 @@ export const parameters = {
     lightClass: 'light-mode',
     stylePreview: true
   },
-  layout: 'fullscreen'
+  layout: 'centered'
 }
 
 export const decorators = [

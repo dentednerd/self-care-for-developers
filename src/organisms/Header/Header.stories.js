@@ -12,6 +12,9 @@ const categoryData = [
 export default {
   title: 'organisms/Header',
   component: Header,
+  parameters: {
+    layout: 'fullscreen'
+  }
 };
 
 const channel = addons.getChannel();
