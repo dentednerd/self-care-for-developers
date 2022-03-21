@@ -2,9 +2,9 @@ import React from 'react';
 import Nav from '.';
 
 const categoryData = [
-  { fieldValue: 'one' },
-  { fieldValue: 'two' },
-  { fieldValue: 'three' }
+  { fieldValue: 'category 1' },
+  { fieldValue: 'category 2' },
+  { fieldValue: 'category 3' }
 ];
 
 export default {
@@ -12,6 +12,13 @@ export default {
   component: Nav,
 };
 
-const Template = () => <Nav categoryData={categoryData} headerClasses={['open']} />;
+const Template = () => (
+  <Nav
+    categoryData={categoryData}
+    hamburgerRef={null}
+    isMenuOpen
+    setIsMenuOpen={null}
+  />
+);
 
 export const Default = Template.bind({});

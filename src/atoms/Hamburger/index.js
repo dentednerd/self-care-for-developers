@@ -34,31 +34,32 @@ const StyledHamburger = styled('div', {
     top: '1rem',
   },
 
-  '&.open span:nth-of-type(1)': {
+  '&.cross span:nth-of-type(1)': {
     top: '1rem',
     width: '0%',
     left: '50%',
   },
 
-  '&.open span:nth-of-type(2)': {
+  '&.cross span:nth-of-type(2)': {
     transform: 'rotate(45deg)',
   },
 
-  '&.open span:nth-of-type(3)': {
+  '&.cross span:nth-of-type(3)': {
     transform: 'rotate(-45deg)',
   },
 
-  '&.open span:nth-of-type(4)': {
+  '&.cross span:nth-of-type(4)': {
     top: '1rem',
     width: '0%',
     left: '50%',
   }
 });
 
-const Hamburger = ({ isMenuOpen, setIsMenuOpen }) => (
+const Hamburger = ({ hamburgerRef, isMenuOpen, setIsMenuOpen }) => (
   <StyledHamburger
     onClick={() => setIsMenuOpen(!isMenuOpen)}
-    className={isMenuOpen && 'open'}
+    className={isMenuOpen && 'cross'}
+    ref={hamburgerRef}
   >
     <span />
     <span />

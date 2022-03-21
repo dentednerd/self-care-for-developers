@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useRef } from 'react';
 import kebabCase from 'lodash/kebabCase';
 import { Link } from 'gatsby';
 import { styled } from '../../stitches.config';
+import useClickOutsideNav from '../../hooks/useClickOutsideNav';
 
 const StyledNav = styled('nav', {
   position: 'absolute',
@@ -25,12 +25,13 @@ const StyledNav = styled('nav', {
   },
 });
 
-const Nav = ({ categoryData, isMenuOpen }) => {
-  if (!categoryData) return null;
+const Nav = ({ categoryData, hamburgerRef, isMenuOpen, setIsMenuOpen }) => {
+  const navRef = useRef();
+  useClickOutsideNav(navRef, hamburgerRef, isMenuOpen, setIsMenuOpen);
 
   return (
-    <StyledNav className={isMenuOpen && 'open'}>
-      {categoryData.map(({ fieldValue }) => (
+    <StyledNav className={isMenuOpen && 'open'} ref={navRef}>
+      {categoryData?.map(({ fieldValue }) => (
         <p key={fieldValue}>
           <Link to={`/${kebabCase(fieldValue)}`}>
             {fieldValue}
@@ -40,10 +41,6 @@ const Nav = ({ categoryData, isMenuOpen }) => {
       <p><Link to="/">home</Link></p>
     </StyledNav>
   );
-}
-
-Nav.propTypes = {
-  headerClasses: PropTypes.array.isRequired
 }
 
 export default Nav;

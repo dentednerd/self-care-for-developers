@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '../../stitches.config';
 import { ToggleMenuContext } from '../../contexts/ToggleMenu';
@@ -25,6 +25,8 @@ const StyledHeader = styled('header', {
 const Header = ({ categoryData, darkMode }) => {
   const { isMenuOpen, setIsMenuOpen } = useContext(ToggleMenuContext);
 
+  const hamburgerRef = useRef();
+
   return (
     <StyledHeader>
       <DarkModeToggle darkMode={darkMode} />
@@ -32,9 +34,12 @@ const Header = ({ categoryData, darkMode }) => {
         <>
           <Nav
             categoryData={categoryData}
+            hamburgerRef={hamburgerRef}
             isMenuOpen={isMenuOpen}
+            setIsMenuOpen={setIsMenuOpen}
           />
           <Hamburger
+            hamburgerRef={hamburgerRef}
             isMenuOpen={isMenuOpen}
             setIsMenuOpen={setIsMenuOpen}
           />
