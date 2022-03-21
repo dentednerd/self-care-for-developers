@@ -13,7 +13,7 @@ export const parameters = {
     },
   },
   darkMode: {
-    dark: { ...themes.dark, appBg: 'hsl(239, 43%, 23%)' },
+    dark: { ...themes.dark, appBg: 'hsl(239, 43%, 33%)' },
     darkClass: 'dark-mode',
     light: { ...themes.normal, appBg: 'hsl(8, 79%, 86%)' },
     lightClass: 'light-mode',

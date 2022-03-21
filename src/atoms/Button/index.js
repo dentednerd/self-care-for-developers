@@ -17,11 +17,26 @@ const StyledButton = styled('button', {
     boxShadow: '2px 2px 2px $colors$shadow',
     transition: 'all ease-in-out 0.2s'
   },
+
+  variants: {
+    home: {
+      true: {
+        backgroundColor: '$gold500',
+
+        '&:hover': {
+          backgroundColor: '$gold400'
+        }
+      }
+    }
+  },
+  defaultVariants: {
+    home: 'false'
+  }
 });
 
-const Button = ({ children }) => {
+const Button = ({ children, home }) => {
   return (
-    <StyledButton>
+    <StyledButton home={home}>
       {children}
     </StyledButton>
   );

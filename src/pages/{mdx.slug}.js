@@ -5,6 +5,7 @@ import kebabCase from 'lodash/kebabCase';
 import { Helmet } from 'react-helmet';
 import LayoutTemplate from '../templates/LayoutTemplate';
 import Button from '../atoms/Button';
+import HomeButton from '../atoms/HomeButton';
 
 const Post = ({ data }) => {
   const { title, date, authorName, authorGithub, tags, } = data.mdx.frontmatter;
@@ -35,11 +36,7 @@ const Post = ({ data }) => {
             </li>
           ))}
           <li>
-            <Link to='/'>
-              <Button>
-                Take me home.
-              </Button>
-            </Link>
+            <HomeButton />
           </li>
         </ul>
       </article>

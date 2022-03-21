@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby";
 import { Helmet } from 'react-helmet';
 import LayoutTemplate from '../LayoutTemplate';
 import Button from '../../atoms/Button';
+import HomeButton from '../../atoms/HomeButton';
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext;
@@ -30,11 +31,7 @@ const Tags = ({ pageContext, data }) => {
           );
         })}
         <li>
-          <Link to='/'>
-            <Button>
-              Take me home.
-            </Button>
-          </Link>
+          <HomeButton />
         </li>
       </ul>
     </LayoutTemplate>
