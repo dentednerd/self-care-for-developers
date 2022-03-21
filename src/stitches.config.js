@@ -21,12 +21,14 @@ export const { styled, css, getCssText } = createStitches({
       4: '90px'
     },
     space: {
+      0: '10px',
       1: '30px',
       2: '50px',
       3: '70px',
       4: '90px'
     },
     radii: {
+      0: '10px',
       1: '30px',
       2: '50px',
       3: '70px',

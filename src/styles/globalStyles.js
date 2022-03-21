@@ -72,7 +72,7 @@ const globalStyles = globalCss({
     marginBottom: '$1',
 
     li: {
-      margin: '$1 0'
+      margin: '$0 0 0 0'
     }
   },
 
