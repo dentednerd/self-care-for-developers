@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-disqus`,
       options: {
-        shortname: `your-disqus-shortname`
+        shortname: `self-care-for-developers`
       }
     },
     "gatsby-plugin-mdx"

@@ -9,10 +9,17 @@ import HeroGrid from '../molecules/HeroGrid';
 import useCategoriesQuery from '../hooks/useCategoriesQuery';
 
 const StyledList = styled('ul', {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(2, 1fr)',
-  gridTemplateRows: 'repeat(auto, auto)',
-})
+  '@media(min-width: 768px)': {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gridTemplateRows: 'repeat(auto, auto)',
+    gap: '$1',
+
+    li: {
+      margin: '0'
+    }
+  }
+});
 
 const IndexPage = () => {
   const categoryData = useCategoriesQuery();

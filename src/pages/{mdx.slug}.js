@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link, graphql } from 'gatsby';
+import { Disqus } from 'gatsby-plugin-disqus';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import kebabCase from 'lodash/kebabCase';
 import { Helmet } from 'react-helmet';
@@ -7,7 +8,7 @@ import LayoutTemplate from '../templates/LayoutTemplate';
 import Button from '../atoms/Button';
 import HomeButton from '../atoms/HomeButton';
 
-const Post = ({ data }) => {
+const Post = ({ data, location }) => {
   const { title, date, authorName, authorGithub, tags, } = data.mdx.frontmatter;
 
   return (
@@ -25,6 +26,19 @@ const Post = ({ data }) => {
             {data.mdx.body}
           </MDXRenderer>
         </section>
+
+        <section>
+          <h2 style={{ textAlign: 'left' }}>Let's talk some more...</h2>
+          <Disqus
+            config={{
+              url: `${location.href}`,
+              identifier: title,
+              title: title,
+            }}
+          />
+        </section>
+
+
         <ul>
           {tags.map((tag) => (
             <li key={tag}>

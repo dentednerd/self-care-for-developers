@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 import LayoutTemplate from '../templates/LayoutTemplate';
 import HomeButton from '../atoms/HomeButton';
 

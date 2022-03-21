@@ -33,28 +33,32 @@ const globalStyles = globalCss({
 
   h1: {
     fontFamily: 'Fredoka One',
-    fontSize: '$3',
-    lineHeight: '$3',
+    fontSize: '10vw',
+    lineHeight: '12vw',
     margin: '0 0 1rem',
     color: '$title',
     textAlign: 'center',
 
     '@media(min-width: 768px)': {
       textAlign: 'left',
+      fontSize: '$3',
+      lineHeight: '$3',
     }
   },
 
   h2: {
     fontFamily: 'Raleway',
-    fontSize: '$2',
+    fontSize: '8vw',
     fontWeight: 700,
-    lineHeight: '$2',
+    lineHeight: '10vw',
     margin: '0 0 1rem',
     color: '$title',
     textAlign: 'center',
 
     '@media(min-width: 768px)': {
       textAlign: 'left',
+      fontSize: '$2',
+      lineHeight: '$2',
     }
   },
 
