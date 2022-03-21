@@ -25,8 +25,14 @@ const Tags = ({ pageContext, data }) => {
             </li>
           );
         })}
+        <li>
+          <Link to='/'>
+            <Button>
+              Let's talk about something else - take me back.
+            </Button>
+          </Link>
+        </li>
       </ul>
-      <Link to="/">Home</Link>
     </LayoutTemplate>
   )
 }

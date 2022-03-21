@@ -10,22 +10,35 @@ const Post = ({ data }) => {
 
   return (
     <LayoutTemplate>
-      <h1>{title}</h1>
-      <p>by <a href={`https://github.com/${authorGithub}`}>{authorName}</a> on {date}</p>
-      <MDXRenderer>
-        {data.mdx.body}
-      </MDXRenderer>
-      <ul>
-        {tags.map((tag) => (
-          <li key={tag}>
-            <Link to={`/${kebabCase(tag)}`}>
+      <article>
+        <header>
+          <h1>{title}</h1>
+          <p>by <a href={`https://github.com/${authorGithub}`}>{authorName}</a> on {date}</p>
+        </header>
+        <section className="article-body">
+          <MDXRenderer>
+            {data.mdx.body}
+          </MDXRenderer>
+        </section>
+        <ul>
+          {tags.map((tag) => (
+            <li key={tag}>
+              <Link to={`/${kebabCase(tag)}`}>
+                <Button>
+                  Let's talk more about {tag}.
+                </Button>
+              </Link>
+            </li>
+          ))}
+          <li>
+            <Link to='/'>
               <Button>
-                Let's talk more about {tag}.
+                Let's talk about something else - take me back.
               </Button>
             </Link>
           </li>
-        ))}
-      </ul>
+        </ul>
+      </article>
     </LayoutTemplate>
   );
 };

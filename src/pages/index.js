@@ -1,21 +1,25 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { styled } from '../stitches.config';
 import kebabCase from 'lodash/kebabCase';
 import LayoutTemplate from '../templates/LayoutTemplate';
 import Button from '../atoms/Button';
+import HeroGrid from '../molecules/HeroGrid';
 import useCategoriesQuery from '../hooks/useCategoriesQuery';
+
+const StyledList = styled('ul', {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(2, 1fr)',
+  gridTemplateRows: 'repeat(auto, auto)',
+})
 
 const IndexPage = () => {
   const categoryData = useCategoriesQuery();
 
   return (
     <LayoutTemplate>
-      <h1>
-        Self Care for Developers
-      </h1>
-      <h2>aka the care and feeding of the software developer</h2>
-      <ul>
-
+      <HeroGrid />
+      <StyledList>
         {categoryData.map(({ fieldValue }) => (
           <li key={fieldValue}>
             <Link to={`/${kebabCase(fieldValue)}`}>
@@ -25,7 +29,7 @@ const IndexPage = () => {
             </Link>
           </li>
         ))}
-      </ul>
+      </StyledList>
     </LayoutTemplate>
   );
 }
