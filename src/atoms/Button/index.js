@@ -4,7 +4,7 @@ import { styled } from '../../stitches.config';
 const StyledButton = styled('button', {
   border: 'none',
   backgroundColor: '$title',
-  color: '$blue100',
+  color: '$buttonText',
   padding: '$1',
   borderRadius: '$1',
   fontFamily: '$Raleway',
