@@ -38,7 +38,7 @@ const Nav = ({ categoryData, hamburgerRef, isMenuOpen, setIsMenuOpen }) => {
           </Link>
         </p>
       ))}
-      <p><Link to="/">home</Link></p>
+      <p><Link onClick={() => setIsMenuOpen(false)} to="/">home</Link></p>
     </StyledNav>
   );
 }

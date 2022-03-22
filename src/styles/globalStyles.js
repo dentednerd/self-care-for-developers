@@ -1,7 +1,6 @@
 import { globalCss } from '@stitches/react';
 import "@fontsource/fredoka-one";
 import "@fontsource/raleway";
-import "@fontsource/raleway/700.css";
 
 const globalStyles = globalCss({
   '*': {
@@ -49,7 +48,6 @@ const globalStyles = globalCss({
   h2: {
     fontFamily: 'Raleway',
     fontSize: '8vw',
-    fontWeight: 700,
     lineHeight: '10vw',
     margin: '0 0 1rem',
     color: '$title',

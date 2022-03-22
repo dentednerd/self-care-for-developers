@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { styled } from '../stitches.config';
 import { Link, graphql } from 'gatsby';
 import { Disqus } from 'gatsby-plugin-disqus';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -7,6 +8,13 @@ import { Helmet } from 'react-helmet';
 import LayoutTemplate from '../templates/LayoutTemplate';
 import Button from '../atoms/Button';
 import HomeButton from '../atoms/HomeButton';
+
+const CommentsSection = styled('section', {
+  backgroundColor: '$colors$accent',
+  padding: '$1',
+  borderRadius: '$1',
+  marginBottom: '$2'
+})
 
 const Post = ({ data, location }) => {
   const { title, date, authorName, authorGithub, tags, } = data.mdx.frontmatter;
@@ -31,7 +39,7 @@ const Post = ({ data, location }) => {
           </MDXRenderer>
         </section>
 
-        <section>
+        <CommentsSection>
           <h2 style={{ textAlign: 'left' }}>Let's talk some more...</h2>
           <Disqus
             config={{
@@ -40,7 +48,7 @@ const Post = ({ data, location }) => {
               title: title,
             }}
           />
-        </section>
+        </CommentsSection>
 
 
         <ul>
