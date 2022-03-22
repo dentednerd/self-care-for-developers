@@ -60,15 +60,17 @@ export const { styled, css, getCssText } = createStitches({
       gold600: 'hsl(38, 53%, 61%)', // sundance
       gold500: 'hsl(38, 53%, 51%)', // tussock
       gold400: 'hsl(38, 53%, 41%)', // luxorgold
+      gold300: 'hsl(38, 53%, 31%)' // dallas
     }
   },
 });
 
 export const darkTheme = createTheme('dark-mode', {
   colors: {
-    accent: '$blue300',
     bg: '$blue200',
     text: '$white',
+    accent: '$blue300',
+    link: '$green700',
     buttonText: '$blue100',
     title: '$red700',
     titleHover: '$red600',
@@ -78,12 +80,13 @@ export const darkTheme = createTheme('dark-mode', {
 
 export const lightTheme = createTheme('light-mode', {
   colors: {
-    accent: '$red900',
     bg: '$white',
     text: '$blue200',
+    accent: '$red900',
+    link: '$gold300',
     buttonText: '$white',
-    title: '$blue600',
-    titleHover: '$blue500',
+    title: '$blue500',
+    titleHover: '$blue400',
     shadow: '$red800'
   },
 })

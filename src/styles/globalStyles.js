@@ -63,12 +63,8 @@ const globalStyles = globalCss({
   },
 
   a: {
-    color: '$green500',
+    color: '$colors$link',
     textDecoration: 'none',
-
-    '&:visited': {
-      color: '$gold500'
-    }
   },
 
   ul: {

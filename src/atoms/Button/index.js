@@ -22,9 +22,11 @@ const StyledButton = styled('button', {
     home: {
       true: {
         backgroundColor: '$gold500',
+        color: '$blue100',
 
         '&:hover': {
-          backgroundColor: '$gold400'
+          backgroundColor: '$gold400',
+          color: '$blue100',
         }
       }
     }

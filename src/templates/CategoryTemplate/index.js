@@ -12,7 +12,11 @@ const Tags = ({ pageContext, data }) => {
 
   return (
     <LayoutTemplate>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: 'en',
+        }}
+      >
         <title>{tag} - Self Care for Developers</title>
       </Helmet>
       <h1>Let's talk about {tag}.</h1>

@@ -26,7 +26,11 @@ const IndexPage = () => {
 
   return (
     <LayoutTemplate>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: 'en',
+        }}
+      >
         <title>Self Care for Developers</title>
       </Helmet>
       <HeroGrid />

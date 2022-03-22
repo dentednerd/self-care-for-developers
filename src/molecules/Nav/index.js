@@ -33,7 +33,7 @@ const Nav = ({ categoryData, hamburgerRef, isMenuOpen, setIsMenuOpen }) => {
     <StyledNav className={isMenuOpen && 'open'} ref={navRef}>
       {categoryData?.map(({ fieldValue }) => (
         <p key={fieldValue}>
-          <Link to={`/${kebabCase(fieldValue)}`}>
+          <Link to={`/${kebabCase(fieldValue)}`} onClick={() => setIsMenuOpen(false)}>
             {fieldValue}
           </Link>
         </p>

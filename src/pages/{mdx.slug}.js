@@ -13,7 +13,11 @@ const Post = ({ data, location }) => {
 
   return (
     <LayoutTemplate>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: 'en',
+        }}
+      >
         <title>{title} - Self Care for Developers</title>
       </Helmet>
       <article>
