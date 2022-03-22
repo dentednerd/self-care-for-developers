@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import LayoutTemplate from '../LayoutTemplate';
 import Button from '../../atoms/Button';
 import HomeButton from '../../atoms/HomeButton';
+import HeroGrid from '../../molecules/HeroGrid';
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext;
@@ -19,7 +20,7 @@ const Tags = ({ pageContext, data }) => {
       >
         <title>{tag} - Self Care for Developers</title>
       </Helmet>
-      <h1>Let's talk about {tag}.</h1>
+      <HeroGrid tag={tag} />
       <ul>
         {edges.map(({ node }) => {
           const { slug } = node;

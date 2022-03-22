@@ -1,6 +1,6 @@
 import React from 'react';
 import { styled } from '../../stitches.config';
-import DayOff from '../../assets/undraws/DayOff';
+import TagUndraw from '../../atoms/TagUndraw';
 
 const StyledHeroGrid = styled('section', {
   display: 'grid',
@@ -30,16 +30,23 @@ const StyledHeroGrid = styled('section', {
   }
 });
 
-const HeroGrid = () => {
-  return (
-    <StyledHeroGrid>
-      <section>
+const HeroGrid = ({ tag }) => {
+  const title = tag
+    ? <h1>Let's talk about {tag}.</h1>
+    : (
+      <>
         <h1>
           Self Care for Developers
         </h1>
         <h2 style={{ fontWeight: 400 }}>aka the care and feeding of the software developer</h2>
+      </>
+    )
+  return (
+    <StyledHeroGrid>
+      <section>
+        {title}
       </section>
-      <DayOff />
+      <TagUndraw tag={tag} />
     </StyledHeroGrid>
   );
 }

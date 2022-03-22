@@ -7,17 +7,12 @@ export default {
 };
 
 const Template = () => {
-  const [isOpen, toggleIsOpen] = useState(false);
-  const headerClasses = [];
-  if (isOpen) {
-    headerClasses.push('open');
-  }
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <Hamburger
-      isOpen={isOpen}
-      toggleIsOpen={toggleIsOpen}
-      headerClasses={headerClasses}
+      isMenuOpen={isMenuOpen}
+      setIsMenuOpen={setIsMenuOpen}
     />
   )
 };
