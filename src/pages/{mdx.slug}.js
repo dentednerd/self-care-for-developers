@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import LayoutTemplate from '../templates/LayoutTemplate';
 import Button from '../atoms/Button';
 import HomeButton from '../atoms/HomeButton';
+import HeroGrid from '../molecules/HeroGrid';
 
 const CommentsSection = styled('section', {
   backgroundColor: '$colors$accent',
@@ -29,10 +30,8 @@ const Post = ({ data, location }) => {
         <title>{title} - Self Care for Developers</title>
       </Helmet>
       <article>
-        <header>
-          <h1>{title}</h1>
-          <p>by <a href={`https://github.com/${authorGithub}`}>{authorName}</a> on {date}</p>
-        </header>
+        <HeroGrid title={title} tag={tags[0]} />
+        <p>by <a href={`https://github.com/${authorGithub}`}>{authorName}</a> on {date}</p>
         <section className="article-body">
           <MDXRenderer>
             {data.mdx.body}

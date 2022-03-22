@@ -30,21 +30,23 @@ const StyledHeroGrid = styled('section', {
   }
 });
 
-const HeroGrid = ({ tag }) => {
-  const title = tag
-    ? <h1>Let's talk about {tag}.</h1>
-    : (
-      <>
-        <h1>
-          Self Care for Developers
-        </h1>
-        <h2 style={{ fontWeight: 400 }}>aka the care and feeding of the software developer</h2>
-      </>
-    )
+const HeroGrid = ({ tag, title }) => {
+  let text = (
+    <>
+      <h1>
+        Self Care for Developers
+      </h1>
+      <h2 style={{ fontWeight: 400 }}>aka the care and feeding of the software developer</h2>
+    </>
+  );
+
+  if (title) text = <h1>{title}</h1>;
+  if (!title && tag) text = <h1>Let's talk about {tag}.</h1>;
+
   return (
     <StyledHeroGrid>
       <section>
-        {title}
+        {text}
       </section>
       <TagUndraw tag={tag} />
     </StyledHeroGrid>
