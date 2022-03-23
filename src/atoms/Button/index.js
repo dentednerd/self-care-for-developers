@@ -5,6 +5,8 @@ const StyledButton = styled('button', {
   border: 'none',
   backgroundColor: '$title',
   color: '$buttonText',
+  width: '100%',
+  maxWidth: 'calc(768px - 2rem)',
   padding: '$0',
   borderRadius: '$0',
   fontFamily: '$Raleway',

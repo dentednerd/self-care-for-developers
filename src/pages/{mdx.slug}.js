@@ -9,6 +9,7 @@ import LayoutTemplate from '../templates/LayoutTemplate';
 import Button from '../atoms/Button';
 import HomeButton from '../atoms/HomeButton';
 import HeroGrid from '../molecules/HeroGrid';
+import ButtonGrid from '../molecules/ButtonGrid';
 
 const CommentsSection = styled('section', {
   backgroundColor: '$colors$accent',
@@ -49,21 +50,16 @@ const Post = ({ data, location }) => {
           />
         </CommentsSection>
 
-
-        <ul>
+        <ButtonGrid>
           {tags.map((tag) => (
-            <li key={tag}>
-              <Link to={`/${kebabCase(tag)}`}>
-                <Button>
-                  Let's talk more about {tag}.
-                </Button>
-              </Link>
-            </li>
+            <Link key={tag} to={`/${kebabCase(tag)}`}>
+              <Button>
+                Let's talk more about {tag}.
+              </Button>
+            </Link>
           ))}
-          <li>
-            <HomeButton />
-          </li>
-        </ul>
+          <HomeButton />
+        </ButtonGrid>
       </article>
     </LayoutTemplate>
   );

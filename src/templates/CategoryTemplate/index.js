@@ -6,6 +6,7 @@ import LayoutTemplate from '../LayoutTemplate';
 import Button from '../../atoms/Button';
 import HomeButton from '../../atoms/HomeButton';
 import HeroGrid from '../../molecules/HeroGrid';
+import ButtonGrid from '../../molecules/ButtonGrid';
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext;
@@ -21,24 +22,20 @@ const Tags = ({ pageContext, data }) => {
         <title>{tag} - Self Care for Developers</title>
       </Helmet>
       <HeroGrid tag={tag} />
-      <ul>
+      <ButtonGrid>
         {edges.map(({ node }) => {
           const { slug } = node;
           const { title } = node.frontmatter;
           return (
-            <li key={slug}>
-              <Link to={`/${slug}`}>
-                <Button>
-                  {title}
-                </Button>
-              </Link>
-            </li>
+            <Link key={slug} to={`/${slug}`}>
+              <Button>
+                {title}
+              </Button>
+            </Link>
           );
         })}
-        <li>
-          <HomeButton />
-        </li>
-      </ul>
+        <HomeButton />
+      </ButtonGrid>
     </LayoutTemplate>
   )
 }
