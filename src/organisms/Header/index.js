@@ -20,16 +20,30 @@ const StyledHeader = styled('header', {
   color: '$text',
   padding: '1rem',
   marginBottom: '1rem',
+
+  h1: {
+    fontSize: '$1',
+    lineHeight: '$1',
+    marginBottom: '0',
+
+    '@media(min-width: 768px)': {
+      fontSize: '$2',
+      lineHeight: '$2',
+    }
+  }
 });
 
-const Header = ({ categoryData, darkMode }) => {
+const Header = ({ location, categoryData, darkMode }) => {
   const { isMenuOpen, setIsMenuOpen } = useContext(ToggleMenuContext);
 
   const hamburgerRef = useRef();
 
+  console.log(location);
+
   return (
     <StyledHeader>
       <DarkModeToggle darkMode={darkMode} />
+      {location.pathname !== '/' && <h1>Self Care for Developers</h1>}
       {categoryData && (
         <>
           <Nav

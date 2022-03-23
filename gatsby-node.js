@@ -3,7 +3,7 @@ const _ = require('lodash');
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
-  const tagTemplate = path.resolve('src/templates/CategoryTemplate/index.js');
+  const categoryPage = path.resolve('src/pages/CategoryPage.js');
 
   const result = await graphql(`
     {
@@ -20,7 +20,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   tags.forEach((tag) => {
     createPage({
       path: `/${_.kebabCase(tag.fieldValue)}`,
-      component: tagTemplate,
+      component: categoryPage,
       context: {
         tag: tag.fieldValue,
       },

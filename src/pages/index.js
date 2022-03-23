@@ -8,11 +8,11 @@ import HeroGrid from '../molecules/HeroGrid';
 import ButtonGrid from '../molecules/ButtonGrid';
 import useCategoriesQuery from '../hooks/useCategoriesQuery';
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   const categoryData = useCategoriesQuery();
 
   return (
-    <LayoutTemplate>
+    <LayoutTemplate location={location}>
       <Helmet
         htmlAttributes={{
           lang: 'en',

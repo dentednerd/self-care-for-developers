@@ -6,7 +6,7 @@ import Header from '../../organisms/Header';
 import useCategoriesQuery from '../../hooks/useCategoriesQuery';
 import globalStyles from '../../styles/globalStyles';
 
-const LayoutTemplate = ({ children }) => {
+const LayoutTemplate = ({ location, children }) => {
   const isBrowser = () => typeof window !== 'undefined';
   const darkPreference = isBrowser() && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const darkMode = useDarkMode(darkPreference);
@@ -18,7 +18,7 @@ const LayoutTemplate = ({ children }) => {
 
   return (
     <div className={theme}>
-      <Header categoryData={categoryData} darkMode={darkMode} />
+      <Header location={location} categoryData={categoryData} darkMode={darkMode} />
       <main>
         {children}
       </main>

@@ -2,18 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import { Helmet } from 'react-helmet';
-import LayoutTemplate from '../LayoutTemplate';
-import Button from '../../atoms/Button';
-import HomeButton from '../../atoms/HomeButton';
-import HeroGrid from '../../molecules/HeroGrid';
-import ButtonGrid from '../../molecules/ButtonGrid';
+import LayoutTemplate from '../templates/LayoutTemplate';
+import Button from '../atoms/Button';
+import HomeButton from '../atoms/HomeButton';
+import HeroGrid from '../molecules/HeroGrid';
+import ButtonGrid from '../molecules/ButtonGrid';
 
-const Tags = ({ pageContext, data }) => {
+const CategoryPage = ({ location, pageContext, data }) => {
   const { tag } = pageContext;
   const { edges } = data.allMdx;
 
   return (
-    <LayoutTemplate>
+    <LayoutTemplate location={location}>
       <Helmet
         htmlAttributes={{
           lang: 'en',
@@ -40,7 +40,7 @@ const Tags = ({ pageContext, data }) => {
   )
 }
 
-Tags.propTypes = {
+CategoryPage.propTypes = {
   pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,
   }),
@@ -63,7 +63,7 @@ Tags.propTypes = {
   }),
 }
 
-export default Tags
+export default CategoryPage;
 
 export const pageQuery = graphql`
   query($tag: String) {
