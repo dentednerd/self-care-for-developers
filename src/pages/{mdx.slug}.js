@@ -22,7 +22,7 @@ const Post = ({ data, location }) => {
   const { title, date, authorName, authorGithub, tags, } = data.mdx.frontmatter;
 
   return (
-    <LayoutTemplate>
+    <LayoutTemplate location={location}>
       <Helmet
         htmlAttributes={{
           lang: 'en',
