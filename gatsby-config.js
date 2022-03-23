@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "Self Care for Developers",
+    description: "A hub of useful information regarding the care and feeding of software developers, curated by software developers."
   },
   plugins: [
     "gatsby-plugin-image",
