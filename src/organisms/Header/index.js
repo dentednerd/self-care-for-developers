@@ -1,4 +1,5 @@
 import React, { useContext, useRef } from 'react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { styled } from '../../stitches.config';
 import { ToggleMenuContext } from '../../contexts/ToggleMenu';
@@ -43,7 +44,13 @@ const Header = ({ location, categoryData, darkMode }) => {
   return (
     <StyledHeader>
       <DarkModeToggle darkMode={darkMode} />
-      {location.pathname !== '/' && <h1>Self Care for Developers</h1>}
+      {location.pathname !== '/' && (
+        <Link to="/">
+          <h1>
+            Self Care for Developers
+          </h1>
+        </Link>
+      )}
       {categoryData && (
         <>
           <Nav
