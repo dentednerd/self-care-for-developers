@@ -80,14 +80,9 @@ const globalStyles = globalCss({
     },
 
     ul: {
-      width: 'calc(100% - 8rem)',
-      margin: '0 4rem',
+      width: 'calc(100% - 2rem)',
+      margin: '0 1rem',
       listStyleType: "disc",
-      marginBottom: '$2',
-
-      li: {
-        margin: '$1 0'
-      }
     }
   }
 });
