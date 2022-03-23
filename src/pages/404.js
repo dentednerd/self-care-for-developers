@@ -1,12 +1,12 @@
 import * as React from 'react';
 import LayoutTemplate from '../templates/LayoutTemplate';
-import HomeButton from '../atoms/HomeButton';
+import HomeLink from '../atoms/HomeLink';
 
 const NotFoundPage = () => {
   return (
     <LayoutTemplate>
       <h1>Page not found</h1>
-      <HomeButton />
+      <HomeLink />
     </LayoutTemplate>
   )
 }

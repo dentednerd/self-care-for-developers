@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import LayoutTemplate from '../templates/LayoutTemplate';
 import { Helmet } from 'react-helmet';
-import Button from '../atoms/Button';
+import BigLink from '../atoms/BigLink';
 import HeroGrid from '../molecules/HeroGrid';
 import ButtonGrid from '../molecules/ButtonGrid';
 import useCategoriesQuery from '../hooks/useCategoriesQuery';
@@ -23,11 +22,9 @@ const IndexPage = ({ location }) => {
       <HeroGrid />
       <ButtonGrid>
         {categoryData.map(({ fieldValue }) => (
-            <Link key={fieldValue} to={`/${kebabCase(fieldValue)}`}>
-              <Button>
-                Let's talk about {fieldValue}.
-              </Button>
-            </Link>
+          <BigLink key={fieldValue} to={`/${kebabCase(fieldValue)}`}>
+            Let's talk about {fieldValue}.
+          </BigLink>
         ))}
       </ButtonGrid>
     </LayoutTemplate>

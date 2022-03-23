@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { styled } from '../../stitches.config';
 
-const StyledButton = styled('button', {
+const StyledBigLink = styled(Link, {
   border: 'none',
   backgroundColor: '$title',
-  color: '$buttonText',
-  width: '100%',
+  color: '$bigLinkText',
+  textAlign: 'center',
+  width: 'calc(100% - $1)',
   maxWidth: 'calc(768px - 2rem)',
   padding: '$0',
   borderRadius: '$0',
@@ -38,12 +40,12 @@ const StyledButton = styled('button', {
   }
 });
 
-const Button = ({ children, home }) => {
+const BigLink = ({ to, children, home }) => {
   return (
-    <StyledButton home={home}>
+    <StyledBigLink to={to} home={home}>
       {children}
-    </StyledButton>
+    </StyledBigLink>
   );
 }
 
-export default Button;
+export default BigLink;

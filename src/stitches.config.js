@@ -71,7 +71,7 @@ export const darkTheme = createTheme('dark-mode', {
     text: '$white',
     accent: '$blue300',
     link: '$green700',
-    buttonText: '$blue100',
+    bigLinkText: '$blue100',
     title: '$red700',
     titleHover: '$red600',
     shadow: '$blue400'
@@ -84,7 +84,7 @@ export const lightTheme = createTheme('light-mode', {
     text: '$blue200',
     accent: '$red900',
     link: '$gold300',
-    buttonText: '$white',
+    bigLinkText: '$white',
     title: '$blue500',
     titleHover: '$blue400',
     shadow: '$red800'

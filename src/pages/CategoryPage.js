@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { Helmet } from 'react-helmet';
 import LayoutTemplate from '../templates/LayoutTemplate';
-import Button from '../atoms/Button';
-import HomeButton from '../atoms/HomeButton';
+import BigLink from '../atoms/BigLink';
+import HomeLink from '../atoms/HomeLink';
 import HeroGrid from '../molecules/HeroGrid';
 import ButtonGrid from '../molecules/ButtonGrid';
 
@@ -27,14 +27,12 @@ const CategoryPage = ({ location, pageContext, data }) => {
           const { slug } = node;
           const { title } = node.frontmatter;
           return (
-            <Link key={slug} to={`/${slug}`}>
-              <Button>
-                {title}
-              </Button>
-            </Link>
+            <BigLink key={slug} to={`/${slug}`}>
+              {title}
+            </BigLink>
           );
         })}
-        <HomeButton />
+        <HomeLink />
       </ButtonGrid>
     </LayoutTemplate>
   )

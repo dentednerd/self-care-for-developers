@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { styled } from '../stitches.config';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import { Disqus } from 'gatsby-plugin-disqus';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import kebabCase from 'lodash/kebabCase';
 import { Helmet } from 'react-helmet';
 import LayoutTemplate from '../templates/LayoutTemplate';
-import Button from '../atoms/Button';
-import HomeButton from '../atoms/HomeButton';
+import BigLink from '../atoms/BigLink';
+import HomeLink from '../atoms/HomeLink';
 import HeroGrid from '../molecules/HeroGrid';
 import ButtonGrid from '../molecules/ButtonGrid';
 
@@ -52,13 +52,11 @@ const Post = ({ data, location }) => {
 
         <ButtonGrid>
           {tags.map((tag) => (
-            <Link key={tag} to={`/${kebabCase(tag)}`}>
-              <Button>
-                Let's talk more about {tag}.
-              </Button>
-            </Link>
+            <BigLink key={tag} to={`/${kebabCase(tag)}`}>
+              Let's talk more about {tag}.
+            </BigLink>
           ))}
-          <HomeButton />
+          <HomeLink />
         </ButtonGrid>
       </article>
     </LayoutTemplate>
