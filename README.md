@@ -58,7 +58,7 @@ As much as possible, these illustrations should:
 To achieve this:
 
 1. Download your chosen SVG from Undraw and open it in your IDE.
-1. Copy the SVG code into a new React component in `src/assets/undraws`. Be sure to update any instances of `xmlns:xlink` to `xmlnsXlink`, or Gatsby will throw an error.
+1. Copy the SVG code into a new React component in `src/assets/undraws`. Be sure to update any instances of `xmlns:xlink` to `xmlnsXlink`, and also add the `aria-hidden="true"` attribute to the `<svg>` tag itself.
 1. Create a story for your new component and open it up in Storybook for an optimal dev experience.
 1. Using your best artistic judgement, scan the SVG code in your new component for colours (VSCode users: might I recommend [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight) for this task?), and swap them out for colours declared in the Stitches config, using CSS variable syntax (e.g. to use the `title` theme colour, replace the colour hex with `var(--colors-title)`).
 1. When you're happy with your colour choices, add your component to `src/assets/undraws/index.js`, import it into `src/atoms/TagUndraw`, and create a new case for your tag and illustration. Take a look at `TagUndraw` in Storybook to help you out with this.

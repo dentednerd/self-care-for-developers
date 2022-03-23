@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from '.';
+import Menu from '.';
 
 const categoryData = [
   { fieldValue: 'category 1' },
@@ -8,12 +8,12 @@ const categoryData = [
 ];
 
 export default {
-  title: 'molecules/Nav',
-  component: Nav,
+  title: 'molecules/Menu',
+  component: Menu,
 };
 
 const Template = () => (
-  <Nav
+  <Menu
     categoryData={categoryData}
     hamburgerRef={null}
     isMenuOpen

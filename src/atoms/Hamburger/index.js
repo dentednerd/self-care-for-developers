@@ -1,13 +1,16 @@
 import React from 'react';
 import { styled } from '../../stitches.config';
 
-const StyledHamburger = styled('div', {
+const StyledHamburger = styled('button', {
+  backgroundColor: 'transparent',
+  border: 'none',
   width: '2rem',
-  height: '1rem',
+  height: '1.25rem',
   position: 'relative',
   transform: 'rotate(0deg)',
   transition: '0.5s ease-in-out',
   cursor: 'pointer',
+  display: 'flex',
 
   span: {
     display: 'block',
@@ -60,6 +63,9 @@ const Hamburger = ({ hamburgerRef, isMenuOpen, setIsMenuOpen }) => (
     onClick={() => setIsMenuOpen(!isMenuOpen)}
     className={isMenuOpen && 'cross'}
     ref={hamburgerRef}
+    id="toggle"
+    aria-expanded="false"
+    aria-controls="menu"
   >
     <span />
     <span />

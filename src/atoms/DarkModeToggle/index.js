@@ -8,7 +8,9 @@ const DarkModeToggle = ({ darkMode }) => (
     onChange={() => darkMode.value ? darkMode.disable() : darkMode.enable()}
     checked={darkMode.value}
     icons={{ checked: "☾", unchecked: "☀" }}
-    aria-label="Dark mode"
+    role="switch"
+    aria-label="Toggle dark mode"
+    aria-checked={darkMode.value ? "true" : "false"}
   />
 );
 

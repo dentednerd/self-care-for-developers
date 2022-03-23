@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { styled } from '../../stitches.config';
 import { ToggleMenuContext } from '../../contexts/ToggleMenu';
 import DarkModeToggle from '../../atoms/DarkModeToggle';
-import Nav from '../../molecules/Nav';
+import Menu from '../../molecules/Menu';
 import Hamburger from '../../atoms/Hamburger';
 
 const StyledHeader = styled('header', {
@@ -52,8 +52,8 @@ const Header = ({ location, categoryData, darkMode }) => {
         </Link>
       )}
       {categoryData && (
-        <>
-          <Nav
+        <nav role="navigation">
+          <Menu
             categoryData={categoryData}
             hamburgerRef={hamburgerRef}
             isMenuOpen={isMenuOpen}
@@ -64,7 +64,7 @@ const Header = ({ location, categoryData, darkMode }) => {
             isMenuOpen={isMenuOpen}
             setIsMenuOpen={setIsMenuOpen}
           />
-        </>
+        </nav>
       )}
     </StyledHeader>
   );

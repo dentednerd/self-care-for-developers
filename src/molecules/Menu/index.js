@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { styled } from '../../stitches.config';
 import useClickOutsideNav from '../../hooks/useClickOutsideNav';
 
-const StyledNav = styled('nav', {
+const StyledNav = styled('ul', {
   position: 'absolute',
   top: '4rem',
   right: '0',
@@ -25,22 +25,26 @@ const StyledNav = styled('nav', {
   },
 });
 
-const Nav = ({ categoryData, hamburgerRef, isMenuOpen, setIsMenuOpen }) => {
+const Menu = ({ categoryData, hamburgerRef, isMenuOpen, setIsMenuOpen }) => {
   const navRef = useRef();
   useClickOutsideNav(navRef, hamburgerRef, isMenuOpen, setIsMenuOpen);
 
   return (
-    <StyledNav className={isMenuOpen && 'open'} ref={navRef}>
+    <StyledNav
+      id="menu"
+      className={isMenuOpen && 'open'}
+      ref={navRef}
+    >
       {categoryData?.map(({ fieldValue }) => (
-        <p key={fieldValue}>
+        <li key={fieldValue}>
           <Link to={`/${kebabCase(fieldValue)}`} onClick={() => setIsMenuOpen(false)}>
             {fieldValue}
           </Link>
-        </p>
+        </li>
       ))}
-      <p><Link onClick={() => setIsMenuOpen(false)} to="/">home</Link></p>
+      <li><Link onClick={() => setIsMenuOpen(false)} to="/">home</Link></li>
     </StyledNav>
   );
 }
 
-export default Nav;
+export default Menu;
