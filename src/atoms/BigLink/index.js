@@ -3,6 +3,8 @@ import { Link } from 'gatsby';
 import { styled } from '../../stitches.config';
 
 const StyledBigLink = styled(Link, {
+  display: 'grid',
+  alignItems: 'center',
   border: 'none',
   backgroundColor: '$title',
   color: '$bigLinkText',

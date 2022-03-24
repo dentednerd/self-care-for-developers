@@ -19,7 +19,7 @@ const LayoutTemplate = ({ location, children }) => {
   return (
     <div className={theme}>
       <Header location={location} categoryData={categoryData} darkMode={darkMode} />
-      <main>
+      <main id="content">
         {children}
       </main>
     </div>

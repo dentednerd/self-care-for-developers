@@ -31,7 +31,23 @@ const StyledHeader = styled('header', {
       fontSize: '$2',
       lineHeight: '$2',
     }
-  }
+  },
+
+  '#skip': {
+    position: 'absolute',
+    top: '4rem',
+    left: '0',
+    padding: '$1',
+
+    a: {
+      color: 'transparent',
+
+      '&:focus': {
+        backgroundColor: '$accent',
+        color: '$link',
+      }
+    }
+  },
 });
 
 const Header = ({ location, categoryData, darkMode }) => {
@@ -39,10 +55,13 @@ const Header = ({ location, categoryData, darkMode }) => {
 
   const hamburgerRef = useRef();
 
-  console.log(location);
-
   return (
     <StyledHeader>
+      <div id="skip">
+        <a href="#content">
+          Skip to Main Content
+        </a>
+      </div>
       <DarkModeToggle darkMode={darkMode} />
       {location.pathname !== '/' && (
         <Link to="/">

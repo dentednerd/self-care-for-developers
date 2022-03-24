@@ -31,8 +31,10 @@ const Post = ({ data, location }) => {
         <title>{title} - Self Care for Developers</title>
       </Helmet>
       <article>
-        <HeroGrid title={title} tag={tags[0]} />
-        <p>by <a href={`https://github.com/${authorGithub}`}>{authorName}</a> on {date}</p>
+        <header>
+          <HeroGrid title={title} tag={tags[0]} />
+          <p>by <a href={`https://github.com/${authorGithub}`}>{authorName}</a> on {date}</p>
+        </header>
         <section className="article-body">
           <MDXRenderer>
             {data.mdx.body}
