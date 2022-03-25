@@ -14,12 +14,19 @@ export default {
   component: Header,
   parameters: {
     layout: 'fullscreen'
+  },
+  argTypes: {
+    location: {
+      control: {
+        type: 'object'
+      }
+    }
   }
 };
 
 const channel = addons.getChannel();
 
-const Template = () => {
+const Template = ({ location }) => {
   const [isDark, toggleIsDark] = useState(useDarkMode());
 
   useEffect(() => {
@@ -34,8 +41,14 @@ const Template = () => {
     toggle: () => (toggleIsDark(!isDark))
   }
   return (
-    <Header categoryData={categoryData} darkMode={darkMode} />
+    <Header location={location} categoryData={categoryData} darkMode={darkMode} />
   )
 };
 
 export const Default = Template.bind({});
+
+Default.args = {
+  location: {
+    pathname: '/'
+  }
+}
